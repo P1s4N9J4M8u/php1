@@ -93,7 +93,7 @@ class PrinterController extends Controller
 			],422);
 		}
 		
-		Try {
+		try {
 			
 			// Simpan ke Database
 			
@@ -127,7 +127,7 @@ class PrinterController extends Controller
 			
 		} catch(\Exception $e) {
 			
-			Log::error("Gagal Menyimpan data bibit parfum: " . $e->getMessage());
+			Log::error("Gagal Menyimpan data jabatan: " . $e->getMessage());
 			
 			return response()->json([
 			
@@ -234,7 +234,11 @@ class PrinterController extends Controller
 	
 	public function file5() {
 		
-		return.view('printer.file5');
+		$koneksi = 'pgsql';
+		
+		$bagians = DB::connection($koneksi)->table('printer.bagians')->get();
+		
+		return view('printer.file5',compact('bagians'));
 		
 	}
 	
