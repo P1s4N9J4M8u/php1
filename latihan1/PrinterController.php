@@ -16,6 +16,8 @@ use Illuminate\Validation\Rule;
 
 use App\Models\Jabatan;
 
+use App\Models\Bagian;
+
 class PrinterController extends Controller
 {
     // menampilkan tabel Jabatan lengkap dengan data jabatannya
